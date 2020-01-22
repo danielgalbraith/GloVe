@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Generates GloVe training data from GNT corpus
+Generates GloVe training data from GNT corpus with inflections
 '''
 
 # This script needs to be run from the home directory
@@ -17,7 +17,7 @@ import string
 from os import path
 
 datapath = 'data/gnt/'
-outfile = 'data/gnt/corpus'
+outfile = 'data/gnt/corpus_infl'
 
 
 def create_txt(datapath, outfile):
@@ -29,7 +29,7 @@ def create_txt(datapath, outfile):
                 with codecs.open(outfile, "a+", "utf-8") as fout:
                     for line in fin:
                         linesplit = line.split(' ')
-                        tok = linesplit[-1].strip().translate(str.maketrans('', '', string.punctuation))
+                        tok = linesplit[5].strip().translate(str.maketrans('', '', string.punctuation))
                         fout.write(tok + ' ')
                     fout.write('\n')
 

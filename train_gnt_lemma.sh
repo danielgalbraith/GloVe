@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CORPUS=data/gnt/corpus
+CORPUS=data/gnt/corpus_lemma
 VERBOSE=2
 MEMORY=4.0
 VOCAB_MIN_COUNT=5
@@ -12,7 +12,7 @@ BINARY=2
 NUM_THREADS=8
 X_MAX=10
 
-OUTPUT=output/gnt-v$VECTOR_SIZE-e$MAX_ITER
+OUTPUT=output/gnt_lemma-v$VECTOR_SIZE-e$MAX_ITER
 mkdir -p $OUTPUT
 
 VOCAB_FILE=$OUTPUT/vocab
